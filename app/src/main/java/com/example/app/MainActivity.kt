@@ -22,7 +22,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private var txtusername: EditText? = null
     private var txtpassword: EditText? = null
 
-    /*En esta función daremos el valor a las variables que hemos creado anteriormente.
+    /*
+    * En esta función daremos el valor a las variables que hemos creado anteriormente.
     * Le indicaremos la id del botón, imagen, etc..
      */
     override fun onCreate(savedInstanceState: Bundle?) {
