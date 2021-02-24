@@ -45,8 +45,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
 
-    /*En esta función indicaremos lo que hará el botón, imagen, etc. cuando el usuario haga click.
-    */
+    /*En esta función indicaremos lo que hará el botón, imagen, etc. cuando el usuario haga click.*/
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.sing_in -> {
