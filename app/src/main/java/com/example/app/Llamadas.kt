@@ -1,6 +1,6 @@
 package com.example.app
 /*
-@author﻿ Edgar Ortiz / Jesus Fontana
+@author Edgar Ortiz / Jesus Fontana
  */
 
 import android.content.Intent
@@ -19,7 +19,7 @@ class Llamadas : AppCompatActivity(), View.OnClickListener {
     private var btntelefono: ImageView? = null
     private var btncontacto: ImageView? = null
     private var btnatras: ImageView? = null
-    private var btnpaginaprincipal: TextView? = null
+    private var btnnombreusuario: TextView? = null
 
     /*En esta función daremos el valor a las variables que hemos creado anteriormente.
     * Le indicaremos la id del botón, imagen, etc..
@@ -33,7 +33,7 @@ class Llamadas : AppCompatActivity(), View.OnClickListener {
         btntelefono = findViewById<ImageView>(R.id.imageView)
         btncontacto = findViewById<ImageView>(R.id.imageView2)
         btnatras = findViewById<ImageView>(R.id.imageView7)
-        btnpaginaprincipal = findViewById<TextView>(R.id.textView2);
+        btnnombreusuario = findViewById<TextView>(R.id.textView2);
 
 
         btnview1!!.setOnClickListener(this)
@@ -41,7 +41,6 @@ class Llamadas : AppCompatActivity(), View.OnClickListener {
         btntelefono!!.setOnClickListener(this)
         btncontacto!!.setOnClickListener(this)
         btnatras!!.setOnClickListener(this)
-        btnpaginaprincipal!!.setOnClickListener(this)
 
     }
 
@@ -66,10 +65,6 @@ class Llamadas : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
             }
             R.id.imageView7 -> {
-                val intent: Intent = Intent(this, Chats::class.java)
-                startActivity(intent)
-            }
-            R.id.textView2 -> {
                 val intent: Intent = Intent(this, Chats::class.java)
                 startActivity(intent)
             }

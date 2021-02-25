@@ -58,7 +58,7 @@
         android:layout_width="178dp"
         android:layout_height="30dp"
         android:gravity="center_horizontal"
-        android:text="Nombre App"
+        android:text="Usuario"
         android:textAlignment="center"
 
         android:textColor="@color/black"
@@ -138,5 +138,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.548"
         app:srcCompat="@drawable/abc_vector_test" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

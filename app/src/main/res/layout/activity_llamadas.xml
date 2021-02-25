@@ -68,7 +68,7 @@
         android:layout_width="178dp"
         android:layout_height="30dp"
         android:gravity="center_horizontal"
-        android:text="Nombre App"
+        android:text="Usuario"
         android:textAlignment="center"
 
         android:textColor="@color/black"

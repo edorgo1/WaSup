@@ -1,6 +1,6 @@
 package com.example.app
 /*
-@author﻿ Edgar Ortiz / Jesus Fontana
+@author Edgar Ortiz / Jesus Fontana
  */
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

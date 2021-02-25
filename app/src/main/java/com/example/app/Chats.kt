@@ -1,6 +1,6 @@
 package com.example.app
 /*
-@author﻿ Edgar Ortiz / Jesus Fontana
+@author Edgar Ortiz / Jesus Fontana
  */
 
 import android.content.Intent
@@ -19,7 +19,10 @@ class Chats : AppCompatActivity(), View.OnClickListener {
     private var btnview2: View? = null
     private var btntelefono: ImageView? = null
     private var btncontacto: ImageView? = null
-    private var btnpaginaprincipal: TextView? = null
+    private var btnsignout: ImageView? = null
+    private var btnnombreusuario: TextView? = null
+
+
 
     /*En esta función daremos el valor a las variables que hemos creado anteriormente.
     * Le indicaremos la id del botón, imagen, etc..
@@ -32,13 +35,14 @@ class Chats : AppCompatActivity(), View.OnClickListener {
         btnview2 = findViewById<View>(R.id.view2);
         btntelefono = findViewById<ImageView>(R.id.imageView);
         btncontacto = findViewById<ImageView>(R.id.imageView2);
-        btnpaginaprincipal = findViewById<TextView>(R.id.textView2);
+        btnnombreusuario = findViewById<TextView>(R.id.textView2);
+        btnsignout = findViewById<ImageView>(R.id.imageView5);
 
         btnview1!!.setOnClickListener(this)
         btnview2!!.setOnClickListener(this)
         btntelefono!!.setOnClickListener(this)
         btncontacto!!.setOnClickListener(this)
-        btnpaginaprincipal!!.setOnClickListener(this)
+        btnsignout!!.setOnClickListener(this)
     }
 
     /*En esta función indicaremos lo que hará el botón, imagen, etc. cuando el usuario haga click.
@@ -61,10 +65,11 @@ class Chats : AppCompatActivity(), View.OnClickListener {
                 val intent: Intent = Intent(this, Contactos::class.java)
                 startActivity(intent)
             }
-            R.id.textView2 -> {
-                val intent: Intent = Intent(this, Chats::class.java)
+            R.id.imageView5 -> {
+                val intent: Intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }
         }
+
     }
 }

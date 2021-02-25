@@ -80,10 +80,10 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="178dp"
-        android:layout_height="30dp"
+        android:layout_width="150dp"
+        android:layout_height="29dp"
         android:gravity="center_horizontal"
-        android:text="Nombre App"
+        android:text="Usuario"
         android:textAlignment="center"
 
         android:textColor="@color/black"
@@ -180,6 +180,17 @@
         app:layout_constraintTop_toBottomOf="@+id/view"
         app:layout_constraintVertical_bias="0.666"
         app:srcCompat="@drawable/contacto" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="37dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.202"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/abc_vector_test" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

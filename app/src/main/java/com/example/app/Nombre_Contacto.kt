@@ -1,6 +1,6 @@
 package com.example.app
 /*
-@author﻿ Edgar Ortiz / Jesus Fontana
+@author Edgar Ortiz / Jesus Fontana
  */
 
 import android.content.Intent
@@ -8,12 +8,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 
 class Nombre_Contacto : AppCompatActivity(), View.OnClickListener {
 
     /*Aquí estamos creando las variables, con un valor nulo.
      */
     private var btnatras: ImageView? = null
+    private var btnnombreusuario: TextView? = null
+
 
     /*En esta función daremos el valor a las variables que hemos creado anteriormente.
     * Le indicaremos la id del botón, imagen, etc..
@@ -23,6 +26,7 @@ class Nombre_Contacto : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_nombre__contacto)
 
         btnatras = findViewById<ImageView>(R.id.imageView15)
+        btnnombreusuario = findViewById<TextView>(R.id.textView2);
 
         btnatras!!.setOnClickListener(this)
     }
