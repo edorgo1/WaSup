@@ -3,13 +3,15 @@ package com.example.app
  */
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+
 
 class MainActivity2 : AppCompatActivity(), View.OnClickListener {
 
@@ -19,10 +21,14 @@ class MainActivity2 : AppCompatActivity(), View.OnClickListener {
     private var btnsing_up_google: Button? = null
     private var emailRegister: EditText? = null
     private var password1Register: EditText? = null
+    private var usernameRegister: EditText? = null
 
     /*En esta función daremos el valor a las variables que hemos creado anteriormente.
     * Le indicaremos la id del botón, imagen, etc..
+    *
      */
+
+    private var db = FirebaseFirestore.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
@@ -31,11 +37,14 @@ class MainActivity2 : AppCompatActivity(), View.OnClickListener {
         btnsing_up_google = findViewById<Button>(R.id.sing_up_google);
         emailRegister = findViewById<EditText>(R.id.emailRegister);
         password1Register = findViewById<EditText>(R.id.password1Register);
+        usernameRegister = findViewById<EditText>(R.id.usernameRegister);
 
         btnsing_up_google!!.setOnClickListener(this)
         btnsing_up!!.setOnClickListener(this)
         emailRegister!!.setOnClickListener(this)
         password1Register!!.setOnClickListener(this)
+
+
     }
 
     /*En esta función indicaremos lo que hará el botón, imagen, etc. cuando el usuario haga click.
@@ -47,7 +56,13 @@ class MainActivity2 : AppCompatActivity(), View.OnClickListener {
                     FirebaseAuth.getInstance().createUserWithEmailAndPassword(emailRegister!!.text.toString(),
                         password1Register!!.text.toString()).addOnCompleteListener{
                         if (it.isSuccessful){
-                            val intent: Intent = Intent(this, Chats::class.java)
+                            db.collection("users").document(emailRegister!!.text.toString()).set(
+                                    hashMapOf("pais" to "","phone" to "", "username" to  usernameRegister!!.text.toString())
+                            )
+
+                            val intent: Intent = Intent(this, Chats::class.java).apply {
+                              putExtra("username", usernameRegister!!.text.toString())
+                           }
                             startActivity(intent)
 
                         }else{

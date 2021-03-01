@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import com.google.firebase.auth.FirebaseAuth
 
 class Chats : AppCompatActivity(), View.OnClickListener {
 
@@ -19,9 +20,9 @@ class Chats : AppCompatActivity(), View.OnClickListener {
     private var btnview2: View? = null
     private var btntelefono: ImageView? = null
     private var btncontacto: ImageView? = null
-    private var btnsignout: ImageView? = null
-    private var btnnombreusuario: TextView? = null
 
+    private var cerrarSession: ImageView? = null
+    private var nombreusuario: TextView? = null
 
 
     /*En esta función daremos el valor a las variables que hemos creado anteriormente.
@@ -35,14 +36,25 @@ class Chats : AppCompatActivity(), View.OnClickListener {
         btnview2 = findViewById<View>(R.id.view2);
         btntelefono = findViewById<ImageView>(R.id.imageView);
         btncontacto = findViewById<ImageView>(R.id.imageView2);
-        btnnombreusuario = findViewById<TextView>(R.id.textView2);
-        btnsignout = findViewById<ImageView>(R.id.imageView5);
+        cerrarSession = findViewById<ImageView>(R.id.cerrarSession);
+        nombreusuario = findViewById<TextView>(R.id.nombreusuario);
+
 
         btnview1!!.setOnClickListener(this)
         btnview2!!.setOnClickListener(this)
         btntelefono!!.setOnClickListener(this)
         btncontacto!!.setOnClickListener(this)
-        btnsignout!!.setOnClickListener(this)
+
+        cerrarSession!!.setOnClickListener(this)
+
+        val bundle: Bundle? = intent.extras
+
+        val username: String? = bundle?.getString("username")
+
+
+        nombreusuario!!.text = username
+
+
     }
 
     /*En esta función indicaremos lo que hará el botón, imagen, etc. cuando el usuario haga click.
@@ -65,11 +77,17 @@ class Chats : AppCompatActivity(), View.OnClickListener {
                 val intent: Intent = Intent(this, Contactos::class.java)
                 startActivity(intent)
             }
-            R.id.imageView5 -> {
+            R.id.cerrarSession -> {
                 val intent: Intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }
+
         }
 
     }
 }
+
+    private fun asignarNombre(username: String) {
+
+    }
+
