@@ -22,6 +22,7 @@ class MainActivity2 : AppCompatActivity(), View.OnClickListener {
     private var emailRegister: EditText? = null
     private var password1Register: EditText? = null
     private var usernameRegister: EditText? = null
+    private var usernameRegister: EditText? = null
 
     /*En esta función daremos el valor a las variables que hemos creado anteriormente.
     * Le indicaremos la id del botón, imagen, etc..
