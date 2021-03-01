@@ -22,7 +22,8 @@ class MainActivity2 : AppCompatActivity(), View.OnClickListener {
     private var emailRegister: EditText? = null
     private var password1Register: EditText? = null
     private var usernameRegister: EditText? = null
-    private var usernameRegister: EditText? = null
+    private var phoneRegister: EditText? = null
+    private var paisRegister: EditText? = null
 
     /*En esta función daremos el valor a las variables que hemos creado anteriormente.
     * Le indicaremos la id del botón, imagen, etc..
@@ -39,6 +40,9 @@ class MainActivity2 : AppCompatActivity(), View.OnClickListener {
         emailRegister = findViewById<EditText>(R.id.emailRegister);
         password1Register = findViewById<EditText>(R.id.password1Register);
         usernameRegister = findViewById<EditText>(R.id.usernameRegister);
+        phoneRegister = findViewById<EditText>(R.id.phoneRegister);
+        paisRegister = findViewById<EditText>(R.id.paisRegister);
+
 
         btnsing_up_google!!.setOnClickListener(this)
         btnsing_up!!.setOnClickListener(this)
@@ -58,7 +62,7 @@ class MainActivity2 : AppCompatActivity(), View.OnClickListener {
                         password1Register!!.text.toString()).addOnCompleteListener{
                         if (it.isSuccessful){
                             db.collection("users").document(emailRegister!!.text.toString()).set(
-                                    hashMapOf("pais" to "","phone" to "", "username" to  usernameRegister!!.text.toString())
+                                    hashMapOf("pais" to paisRegister!!.text.toString(),"phone" to phoneRegister!!.text.toString(), "username" to  usernameRegister!!.text.toString())
                             )
 
                             val intent: Intent = Intent(this, Chats::class.java).apply {
