@@ -83,6 +83,7 @@ class MainActivity2 : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
+    /*Funcion que hacec saltar una ventana con un boton. La ventana pone error*/
 
     private fun showAlert(){
         val builder = AlertDialog.Builder(this)
